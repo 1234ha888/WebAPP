@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div,span{
+				padding: 20px;
+				border: 1px solid red;
+				margin: 5px;
+				display: none;
+			}
+		</style>
+		<script src="../jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+
+			$(function(){
+				//$('#one').css('display','block');
+				//$('#one span').css('display','block');//子孙后代，所有的span都被选中
+				//$('#one>span').css('display','block');//子代，span1都被找到
+				//$('#one + div').css('display','block');//查找下一个兄弟节点，单个
+				//$('#one ~ div').css('display','block');//查找下面所有的兄弟节点，弟弟们
+				$('#one').siblings().css('display','block');//所有的兄弟节点
+				//$('#one').children().css('display','block');//#one>span
+				//$('.s1').parent().css('display','block');//div2显示
+			});
+			
+			
+		</script>
+	</head>
+	<body>
+		<div class="div1">div1</div>
+		<div class="div1" id="one">div2
+			<span class="s1">span1
+				<span class="s2">span2</span>
+			</span>
+			<span class="s1">span1
+				<span class="s2">span2</span>
+			</span>
+		</div>
+		<div class="div1">div3</div>
+		<div class="div1">div4</div>
+	</body>
+</html>
